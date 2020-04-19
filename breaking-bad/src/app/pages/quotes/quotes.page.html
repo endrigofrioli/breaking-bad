@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>quotes</ion-title>
   </ion-toolbar>
@@ -6,4 +6,19 @@
 
 <ion-content>
 
+</ion-content> -->
+
+
+<ion-header>
+	<ion-toolbar color="success">
+		<ion-title>Quotes</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+	<ion-list>
+		<ion-item button detail lines="inset" *ngFor="let quote of quotes
+         | async" (click)="openDetails(quote)">
+			{{ quote.title }}
+		</ion-item>
+	</ion-list>
 </ion-content>
