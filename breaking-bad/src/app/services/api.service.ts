@@ -17,7 +17,7 @@ export class ApiService {
         return this.http.get(`https://www.breakingbadapi.com/api/episodes/${id}`)
     }
 
-    //new code, try //after class
+
     getCharacters(){
         return this.http.get('https://www.breakingbadapi.com/api/characters/')
     }
