@@ -56,35 +56,35 @@ export class FavouriteService {
 
   //characters
 
-  getAllFavouriteCharacters() {
-    return this.storage.get(STORAGE_KEY);
-  }
+//   getAllFavouriteCharacters() {
+//     return this.storage.get(STORAGE_KEY);
+//   }
  
-  isFavouriteCharacter(characterId) {
-    return this.getAllFavouriteCharacters().then(result => {
-      return result && result.indexOf(characterId) !== -1;
-    });
-  }
+//   isFavouriteCharacter(characterId) {
+//     return this.getAllFavouriteCharacters().then(result => {
+//       return result && result.indexOf(characterId) !== -1;
+//     });
+//   }
  
-  favouriteCharacter(characterId) {
-    return this.getAllFavouriteCharacters().then(result => {
-      if (result) {
-        result.push(characterId);
-        return this.storage.set(STORAGE_KEY, result);
-      } else {
-        return this.storage.set(STORAGE_KEY, [characterId]);
-      }
-    });
-  }
+//   favouriteCharacter(characterId) {
+//     return this.getAllFavouriteCharacters().then(result => {
+//       if (result) {
+//         result.push(characterId);
+//         return this.storage.set(STORAGE_KEY, result);
+//       } else {
+//         return this.storage.set(STORAGE_KEY, [characterId]);
+//       }
+//     });
+//   }
  
-  unfavouriteCharacter(characterId) {
-    return this.getAllFavouriteCharacters().then(result => {
-      if (result) {
-        var index = result.indexOf(characterId);
-        result.splice(index, 1);
-        return this.storage.set(STORAGE_KEY, result);
-      }
-    });
-  }
+//   unfavouriteCharacter(characterId) {
+//     return this.getAllFavouriteCharacters().then(result => {
+//       if (result) {
+//         var index = result.indexOf(characterId);
+//         result.splice(index, 1);
+//         return this.storage.set(STORAGE_KEY, result);
+//       }
+//     });
+//   }
  
 }

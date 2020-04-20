@@ -1,24 +1,19 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>quotes</ion-title>
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Quotes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<!-- <ion-item lines="none">
+		 <img src="https://i.pinimg.com/originals/af/bb/8c/afbb8ca2f474c9a296d1314c6cefa0ac.jpg"> 
+		</ion-item> 
+        -->
 
-</ion-content> -->
 
-
-<ion-header>
-	<ion-toolbar color="success">
-		<ion-title>Quotes</ion-title>
-	</ion-toolbar>
-</ion-header>
-<ion-content>
-	<ion-list>
-		<ion-item button detail lines="inset" *ngFor="let quote of quotes
-         | async" (click)="openDetails(quote)">
-			{{ quote.title }}
-		</ion-item>
-	</ion-list>
+   <ion-list>
+       <ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
+       {{ quote.quote }}
+       </ion-item>
+   </ion-list>
 </ion-content>

@@ -4,14 +4,12 @@ import { Observable } from 'rxjs';
 //import { ApiService } from '../../services/api.service';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
     selector: 'app-episodes',
     templateUrl: './episodes.page.html',
     styleUrls: ['./episodes.page.scss'],
 })
 export class EpisodesPage implements OnInit {
-
     episodes: Observable<any>;
 
     //constructor(private router: Router, private api: ApiService) { } //before httpclient

@@ -12,19 +12,17 @@ import { HttpClient } from '@angular/common/http';
 export class CharactersPage implements OnInit {
     characters: Observable<any>;
     
-    //constructor(private router: Router, private api: ApiService) { }
     constructor(private router: Router, private http: HttpClient){}
 
     ngOnInit() {
-        //this.characters = this.api.getCharacters();
-        this.characters = this.http.get('https://breakingbadapi.com/api/characters/')
+        this.characters = this.http.get('https://breakingbadapi.com/api/characters/');
         this.characters.subscribe(data => {
             console.log('my data: ', data);
             });
     }
 
     openDetails(character) {
-        let characterId = character.character_id;
+        let characterId = character.char_id;
         this.router.navigateByUrl(`/tabs/characters/${characterId}`);
     }
 }

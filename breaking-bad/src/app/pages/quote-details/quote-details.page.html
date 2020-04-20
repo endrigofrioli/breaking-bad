@@ -1,21 +1,35 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>quoteDetails</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content> -->
-
 
 <ion-header>
-	<ion-toolbar color="success">
-		<ion-buttons slot="start">
-			<ion-back-button defaulthref="/tabs/quotes"></ion-back-button>
-		</ion-buttons>
-		<ion-title>Quote Details</ion-title>
-	</ion-toolbar>
+ <ion-toolbar color="success">
+   <ion-buttons slot="start">
+     <ion-back-button defaulthref="/tabs/quotes"></ion-back-button>
+   </ion-buttons>
+   <ion-title>{{ quote?.author }}</ion-title>
+ </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+<ion-content>
+
+<ion-content>
+<ion-card *ngIf="quote">
+
+<ion-item class="movie-info" lines="none">
+				<ion-icon color="warning" name="key-outline" slot="start"></ion-icon>
+				ID : {{ quote.quote_id }}
+			</ion-item>
+
+<ion-item class="movie-info" lines="none">
+				<ion-icon color="warning" name="person-outline" slot="start"></ion-icon>
+				Author : {{ quote.author }}
+			</ion-item>
+
+<ion-item class="movie-info" lines="none">
+				<ion-icon color="warning" name="film-outline" slot="start"></ion-icon>
+				Series : {{ quote.series }}
+			</ion-item>            
+
+
+
+
+
+</ion-card>
 </ion-content>
