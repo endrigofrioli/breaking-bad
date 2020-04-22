@@ -15,8 +15,6 @@ export class CharacterDetailsPage implements OnInit {
     characterId = null;
     isFavourite = false;
 
-    //was in the list before
-    //
     constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private http: HttpClientModule, private favouriteService: FavouriteService) { }
 
     ngOnInit() {
@@ -31,15 +29,15 @@ export class CharacterDetailsPage implements OnInit {
     });
   }
  
-//   favouriteCharacter() {
-//     this.favouriteService.favouriteCharacter(this.characterId).then(() => {
-//       this.isFavourite = true;
-//     });
-//   }
+  favouriteCharacter() {
+    this.favouriteService.favouriteCharacter(this.characterId).then(() => {
+      this.isFavourite = true;
+    });
+  }
  
-//   unfavouriteCharacter() {
-//     this.favouriteService.unfavouriteCharacter(this.characterId).then(() => {
-//       this.isFavourite = false;
-//     });
-//     }
+  unfavouriteCharacter() {
+    this.favouriteService.unfavouriteCharacter(this.characterId).then(() => {
+      this.isFavourite = false;
+    });
+    }
 }

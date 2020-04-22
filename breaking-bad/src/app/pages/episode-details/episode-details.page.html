@@ -7,10 +7,10 @@
 
 		<ion-buttons slot="end">
 			<ion-button (click)="unfavouriteEpisode()" *ngIf="isFavourite">
-				<ion-icon name="star" slot="icon-only"></ion-icon>
+				<ion-icon name="thumbs-up" slot="icon-only"></ion-icon>
 			</ion-button>
 			<ion-button (click)="favouriteEpisode()" *ngIf="!isFavourite">
-				<ion-icon name="star-outline" slot="icon-only"></ion-icon>
+				<ion-icon name="thumbs-up-outline" slot="icon-only"></ion-icon>
 			</ion-button>
 		</ion-buttons>
 
@@ -28,33 +28,33 @@
 
 
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="key-outline" slot="start"></ion-icon>
+			<ion-icon color="success" name="key-outline" slot="start"></ion-icon>
 			ID : {{ episode.episode_id }}
 		</ion-item>
 
 
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="calendar-outline" slot="start"></ion-icon>
+			<ion-icon color="success" name="calendar-outline" slot="start"></ion-icon>
 			Air Date : {{ episode.air_date }}
 		</ion-item>
 
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="list-outline" slot="start"></ion-icon>
+			<ion-icon color="success" name="list-outline" slot="start"></ion-icon>
 			Season : {{ episode.season }}
 		</ion-item>
 
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="pin-outline" slot="start"></ion-icon>
+			<ion-icon color="success" name="pin-outline" slot="start"></ion-icon>
 			Episode : {{ episode.episode }}
 		</ion-item>
 
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="people-outline" slot="start"></ion-icon>
+			<ion-icon color="success" name="people-outline" slot="start"></ion-icon>
 			Characters : {{ episode.characters }}
 		</ion-item>
 
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="film-outline" slot="start"></ion-icon>
+			<ion-icon color="success" name="film-outline" slot="start"></ion-icon>
 			Series : {{ episode.series }}
 		</ion-item>
 

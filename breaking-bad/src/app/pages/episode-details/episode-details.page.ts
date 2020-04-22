@@ -15,31 +15,30 @@ export class EpisodeDetailsPage implements OnInit {
     episodeId = null;
     isFavourite = false;
 
-    //was in the list before
-    //
+
     constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private http: HttpClientModule, private favouriteService: FavouriteService) { }
 
     ngOnInit() {
         this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
         this.api.getEpisode(this.episodeId).subscribe(res => {
             this.episode = res[0];
-            console.log(JSON.stringify(this.episode.episode_id)); 
+            console.log(JSON.stringify(this.episode.episode_id));
         });
 
-         this.favouriteService.isFavourite(this.episodeId).then(isFav => {
-      this.isFavourite = isFav;
-    });
-  }
- 
-  favouriteEpisode() {
-    this.favouriteService.favouriteEpisode(this.episodeId).then(() => {
-      this.isFavourite = true;
-    });
-  }
- 
-  unfavouriteEpisode() {
-    this.favouriteService.unfavouriteEpisode(this.episodeId).then(() => {
-      this.isFavourite = false;
-    });
+        this.favouriteService.isFavourite(this.episodeId).then(isFav => {
+            this.isFavourite = isFav;
+        });
+    }
+
+    favouriteEpisode() {
+        this.favouriteService.favouriteEpisode(this.episodeId).then(() => {
+            this.isFavourite = true;
+        });
+    }
+
+    unfavouriteEpisode() {
+        this.favouriteService.unfavouriteEpisode(this.episodeId).then(() => {
+            this.isFavourite = false;
+        });
     }
 }
