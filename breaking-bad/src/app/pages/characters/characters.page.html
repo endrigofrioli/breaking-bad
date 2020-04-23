@@ -9,6 +9,7 @@
 		<ion-item button detail lines="inset" *ngFor="let character of characters
          | async" (click)="openDetails(character)">
 			{{ character.name }}
+			<!-- show the character name on the list -->
 		</ion-item>
 	</ion-list>
 </ion-content>

@@ -21,23 +21,24 @@ export class CharacterDetailsPage implements OnInit {
         this.characterId = this.activatedRoute.snapshot.paramMap.get('id');
         this.api.getCharacter(this.characterId).subscribe(res => {
             this.character = res[0];
-            console.log(JSON.stringify(this.character.character_id));
+            console.log(JSON.stringify(this.character.character_id)); //Json to get the character info by ID
         });
 
-         this.favouriteService.isFavourite(this.characterId).then(isFav => {
-      this.isFavourite = isFav;
-    });
-  }
- 
-  favouriteCharacter() {
-    this.favouriteService.favouriteCharacter(this.characterId).then(() => {
-      this.isFavourite = true;
-    });
-  }
- 
-  unfavouriteCharacter() {
-    this.favouriteService.unfavouriteCharacter(this.characterId).then(() => {
-      this.isFavourite = false;
-    });
+        this.favouriteService.isFavourite(this.characterId).then(isFav => {
+            this.isFavourite = isFav;
+        });
+    }
+
+    //favourite / unfavourite for each character
+    favouriteCharacter() {
+        this.favouriteService.favouriteCharacter(this.characterId).then(() => {
+            this.isFavourite = true;
+        });
+    }
+
+    unfavouriteCharacter() {
+        this.favouriteService.unfavouriteCharacter(this.characterId).then(() => {
+            this.isFavourite = false;
+        });
     }
 }

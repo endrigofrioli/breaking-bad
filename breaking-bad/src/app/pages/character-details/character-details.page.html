@@ -17,13 +17,14 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
 	<ion-card class="movie-card" *ngIf="character">
 
-		    <ion-item class="movie-info" lines="none">
+		<ion-item class="movie-info" lines="none">
 			<img [src]="character.img" >
             </ion-item>
-            
+
+			<!-- show all the character info by icon followed by text -->
 			<ion-item class="movie-info" lines="none">
 				<ion-icon color="success" name="key-outline" slot="start"></ion-icon>
 				ID : {{ character.char_id }}

@@ -9,6 +9,7 @@ export class ApiService {
     constructor(private http: HttpClient) { }
 
 
+    //accessing the api and getting info from the URL's
     getEpisodes() {
         return this.http.get('https://www.breakingbadapi.com/api/episodes/')
     }

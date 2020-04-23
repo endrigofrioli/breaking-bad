@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
  
-const STORAGE_KEY = 'favouriteEpisodes';
-const STORAGE_KEY1 = 'favouriteCharacters'; 
+const STORAGE_KEY = 'favouriteEpisodes'; //first storage key for Episodes
+const STORAGE_KEY1 = 'favouriteCharacters';  //second storage key for characters
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,13 @@ export class FavouriteService {
     return this.storage.get(STORAGE_KEY);
   }
  
+  //episodes favourite functions
   isFavourite(episodeId) {
     return this.getAllFavouriteEpisodes().then(result => {
       return result && result.indexOf(episodeId) !== -1;
     });
   }
 
-
-
- 
   favouriteEpisode(episodeId) {
     return this.getAllFavouriteEpisodes().then(result => {
       if (result) {
@@ -45,7 +43,7 @@ export class FavouriteService {
     });
   }
 
-  //characters
+  //characters favourite functions
 
   getAllFavouriteCharacters() {
     return this.storage.get(STORAGE_KEY1);

@@ -7,7 +7,7 @@ const routes: Routes = [
         component: TabsPage,
         children: [
             {
-                path: 'episodes',
+                path: 'episodes', //routing for each address
                 children: [
                     {
                         path: '',

@@ -13,7 +13,7 @@ export class EpisodeDetailsPage implements OnInit {
 
     episode: any;
     episodeId = null;
-    isFavourite = false;
+    isFavourite = false; //favourite
 
 
     constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private http: HttpClientModule, private favouriteService: FavouriteService) { }
@@ -29,7 +29,7 @@ export class EpisodeDetailsPage implements OnInit {
             this.isFavourite = isFav;
         });
     }
-
+    //favourite and unfavourite functions of episode
     favouriteEpisode() {
         this.favouriteService.favouriteEpisode(this.episodeId).then(() => {
             this.isFavourite = true;
