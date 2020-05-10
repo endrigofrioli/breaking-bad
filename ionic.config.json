@@ -1,7 +1,8 @@
 {
   "name": "breaking-bad",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
